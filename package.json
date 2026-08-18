@@ -1,0 +1,22 @@
+{
+  "name": "playwright-reto-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acastromoraga/playWright-reto-frameWork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acastromoraga/playWright-reto-frameWork/issues"
+  },
+  "homepage": "https://github.com/acastromoraga/playWright-reto-frameWork#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
