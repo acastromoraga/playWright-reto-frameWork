@@ -1,9 +1,21 @@
 # playWright-reto-frameWork
-# 📘 Configuración de Proyecto de Automatización con Playwright
+
+## 📘 Configuración de Proyecto de Automatización con Playwright
 
 Este documento describe paso a paso cómo crear, clonar y configurar un proyecto de automatización utilizando **GitHub**, **Git** y **Playwright**.
 
 El objetivo es dejar el proyecto correctamente configurado en el equipo local y listo para comenzar a desarrollar pruebas automatizadas.
+
+### Requisitos previos
+
+Antes de comenzar debes tener instalados:
+
+- **Git**
+- **Node.js** 18+ o superior
+- **npm**
+- **Visual Studio Code** (opcional, pero recomendado)
+
+> En Windows, si al ejecutar `npx playwright test` aparece un error por política de scripts, usa `npx.cmd playwright test`.
 
 ---
 
@@ -99,7 +111,7 @@ pwd
 Desde la carpeta donde almacenaremos nuestros proyectos ejecutamos:
 
 ```bash
-git clone https://github.com/usuario/automatizacion-playwright.git
+git clone https://github.com/acastromoraga/playWright-reto-frameWork.git
 ```
 
 Git descargará el repositorio y creará automáticamente una carpeta con el nombre del proyecto.
@@ -107,8 +119,47 @@ Git descargará el repositorio y creará automáticamente una carpeta con el nom
 Ejemplo:
 
 ```text
-C:\Proyectos\automatizacion-playwright
+C:\Proyectos\playWright-reto-frameWork
 ```
+
+---
+
+# 4.1. Verificar y configurar el remoto de GitHub
+
+Cuando el repositorio ya está clonado, puedes verificar el origen con:
+
+```bash
+git remote -v
+```
+
+Si necesitas dejarlo apuntando al repositorio correcto, puedes configurar el remoto así:
+
+```bash
+git remote set-url origin https://github.com/acastromoraga/playWright-reto-frameWork.git
+```
+
+Si por alguna razón el nombre del remoto no está correcto y además aparece `upstream`, puedes revisar:
+
+```bash
+git remote -v
+```
+
+Y si quieres dejarlo con el nombre `origin`:
+
+```bash
+git remote rename upstream origin
+```
+
+> Si `upstream` ya existe, no lo renombres de nuevo. Primero revisa qué remotos están configurados y decide cuál usar.
+
+Si tu cuenta no tiene acceso, GitHub responderá con `403`. En ese caso debes iniciar sesión en GitHub desde VS Code, desde el navegador o usando un token personal con permisos de escritura.
+
+```bash
+git config user.name "acastromoraga"
+git config user.email "tu-correo@ejemplo.com"
+```
+
+> Para subir cambios a GitHub en Windows, suele ser necesario autenticar la cuenta o usar un PAT si Git solicita contraseña.
 
 ---
 
@@ -396,18 +447,21 @@ El reporte permite revisar:
 
 # 20. Comandos recomendados
 
-| Acción                      | Comando                                   |
-| --------------------------- | ----------------------------------------- |
-| Ejecutar todas las pruebas  | `npx playwright test`                     |
-| Mostrar navegador           | `npx playwright test --headed`            |
-| Abrir Playwright UI         | `npx playwright test --ui`                |
-| Ejecutar Debug              | `npx playwright test --debug`             |
-| Ejecutar Chromium           | `npx playwright test --project=chromium`  |
-| Ejecutar archivo específico | `npx playwright test tests/login.spec.ts` |
-| Buscar prueba por nombre    | `npx playwright test -g "nombre"`         |
-| Abrir reporte               | `npx playwright show-report`              |
-| Instalar navegadores        | `npx playwright install`                  |
-| Generar código              | `npx playwright codegen`                  |
+| Acción                      | Comando                                           |
+| --------------------------- | ------------------------------------------------- |
+| Ejecutar todas las pruebas  | `npx playwright test`                             |
+| Ejecutar todas las pruebas (Windows PowerShell) | `npx.cmd playwright test`             |
+| Mostrar navegador           | `npx playwright test --headed`                    |
+| Abrir Playwright UI         | `npx playwright test --ui`                        |
+| Ejecutar Debug              | `npx playwright test --debug`                     |
+| Ejecutar Chromium           | `npx playwright test --project=chromium`          |
+| Ejecutar archivo específico | `npx playwright test tests/login.spec.ts`         |
+| Buscar prueba por nombre    | `npx playwright test -g "nombre"`               |
+| Abrir reporte               | `npx playwright show-report`                      |
+| Instalar navegadores        | `npx playwright install`                          |
+| Generar código              | `npx playwright codegen`                          |
+
+> En Windows, si `npx` falla por la política de ejecución de PowerShell, usa `npx.cmd`.
 
 ---
 
